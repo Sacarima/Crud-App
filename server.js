@@ -2,33 +2,38 @@ console.log("this is a test!")
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const { default: mongoose } = require('mongoose')
+//const { default: mongoose } = require('mongoose')
+const MongoClient = require('mongodb').MongoClient
 const app = express()
-//const mongoose = require('mongoose')
-//const MongoClient = require('mongodb').MongoClient
-//const connectionString = 'mongodb+srv://joaosacarima:GjzhdFRj31UK24MV@cluster0.lczev2f.mongodb.net/?retryWrites=true&w=majority'
+const connectionString = 'mongodb+srv://joaosacarima:GjzhdFRj31UK24MV@cluster0.lczev2f.mongodb.net/Node-API?retryWrites=true&w=majority'
 
-mongoose.connect('mongodb+srv://joaosacarima:GjzhdFRj31UK24MV@cluster0.lczev2f.mongodb.net/Node-API?retryWrites=true&w=majority')
-.then(()=> {
-    console.log('connected to MongoDB')
+//mongoose.connect(connectionString, {useUnifiedTopology: true} )
+MongoClient.connect(connectionString, {useUnifiedTopology: true} )
+.then(client => {
+    console.log('Connected to MongoDB')
+    let db = client.db('star-wars-quotes')
+    let = quotesCollection = db.collection('quotes')
+    app.use(bodyParser.urlencoded({extended: true}))
+    app.get('/', (req, res) => {
+        res.sendFile(__dirname + '/index.html')
+    })
+    app.post('/quotes', (req, rep) => {
+        console.log(req.body)
+    })
+    app.listen(3000, function() {
+        console.log('listening....')
+    })
+
 }).catch(() => {
-    console.log('error')
-})
-// MongoClient.connect(connectionString, (err, client) => {
-//     if (err) return console.error(err)
-//         console.log('Connected to DataBase')
-// })
-app.use(bodyParser.urlencoded({extended: true}))
-
-app.listen(3000, function() {
-    console.log('listening....')
+    console.error('error')
 })
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
 
-app.post('/quotes', (req, rep) => {
-    console.log(req.body)
-})
+
+
+
+ 
+
+
+
 
