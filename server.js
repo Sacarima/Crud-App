@@ -15,6 +15,9 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true} )
     const quotesCollection = db.collection('quotes')
     app.set('view engine', 'ejs')
     app.use(bodyParser.urlencoded({extended: true}))
+    app.use(express.static('public'))
+    app.use(bodyParser.json())
+    
     app.get('/', (req, res) => {
         quotesCollection.find().toArray()
             .then(results => {
@@ -32,14 +35,16 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true} )
         
         .catch(error => console.error(error))
     })
+    app.put('quotes', (req, res) => {
+        console.log(req.body)
+    })
     app.listen(3000, function() {
         console.log('listening....')
     })
-      
-
 })
+.catch(error => console.error(error))
 
-
+//Yoda: Do or do not, there is no try.
 
 
 
