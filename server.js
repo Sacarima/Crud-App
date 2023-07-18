@@ -58,13 +58,22 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true} )
         .catch(error => console.error(error))
 
     })
+    app.delete('/quotes', (req, res) => {
+        quotesCollection.deleteOne(
+         {name: req.body.name }
+        )
+        .then(result => {
+            res.json("Deleted Darth Vader's quote")
+        })
+        .catch(error => console.error(error))
+    })
     app.listen(3000, function() {
         console.log('listening....')
     })
 })
 .catch(error => console.error(error))
 
-//Yoda: Do or do not, there is no try.
+
 
 
 
