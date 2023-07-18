@@ -7,7 +7,7 @@ const MongoClient = require('mongodb').MongoClient
 const app = express()
 const connectionString = 'mongodb+srv://joaosacarima:GjzhdFRj31UK24MV@cluster0.lczev2f.mongodb.net/Node-API?retryWrites=true&w=majority'
 
-//mongoose.connect(connectionString, {useUnifiedTopology: true} )
+
 MongoClient.connect(connectionString, {useUnifiedTopology: true} )
 .then(client => {
     console.log('Connected to MongoDB')
@@ -35,8 +35,23 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true} )
         
         .catch(error => console.error(error))
     })
-    app.put('quotes', (req, res) => {
-        console.log(req.body)
+    app.put('/quotes', (req, res) => {
+        quotesCollection.findOneAndUpdate(
+            { name: 'Joao' },
+            {
+                $set: {
+                name: req.body.name,
+                quote: req.body.quote
+            }
+        },
+        {
+            upsert: true
+        }
+        )
+        .then(result => {
+            console.log(result)
+        })
+
     })
     app.listen(3000, function() {
         console.log('listening....')
