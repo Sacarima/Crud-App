@@ -11,6 +11,7 @@
     <title>Quotes Chemaa</title>
 </head>
 <body>
+    <div class="main-container">
     <h1>Welcome to Quotes Chemaa</h1>
 
     <form action="/quotes" method="POST">
@@ -20,14 +21,16 @@
     </form>
 
     <h2>Quotes</h2>
-    <ul class="quotes">
-        <% for(var i = 0; i < quotes.length; i++) {%>
-            <li class="quotes">
-                <span><%= quotes[i].name %></span>:
-                <span><%= quotes[i].quote %></span>
-            </li>
-        <% } %>
-    </ul>
+    <div class="quote-container">
+        <ul class="quotes">
+            <% for(var i = 0; i < quotes.length; i++) {%>
+                <li class="quotes">
+                    <span class="name"><%= quotes[i].name %></span>:
+                    <span><%= quotes[i].quote %></span>
+                </li>
+            <% } %>
+        </ul>
+    </div>
 
     <div>
         <h2>Darth Vader invades!</h2>
@@ -35,7 +38,8 @@
             Replace the first Yoda quote with a quote written by Darth Vader.
         </p>
         <button id="update-button"> Replace Yoda's quote</button>
-
+    </div>
+    <div class>
         <div>
             <h2>Remove Darth Vader!</h2>
             <p>
@@ -47,6 +51,7 @@
           <div id="message"></div>
      
     </div>
+</div>
       <script src="/main.js"></script>
 </body>
 </html>
