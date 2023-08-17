@@ -4,14 +4,17 @@
   
   :root {
     --clr-primary--900: #66FCF1;
-    --clr-primary--100: #1F2833;
-    --clr-seconary-600: #0B0C10;
+    --clr-primary--100: #1F2833; 
+    --clr-primary--200: #2f3b54;
+    --clr-seconary-600: #171c28;
     --clr-secondary-100: #00ff3c;
+    --clr-secondary-500: #ffae57;
     
 
     --clr-neutral-900: #C5C6C7;
     --clr-neutral-700: #45A29E;
-    --clr-neutral-100: #FFFFFF;
+    --clr-neutral-100: #FFFFFF; 
+    --clr-neutral-200: #ffcc66;
   
     --ff-primary-100: 'Open Sans', sans-serif;
     --ff-pramary: 'Lato', sans-serif;
@@ -22,7 +25,8 @@
 
   body {
     background: var(--clr-seconary-600);
-    font-family: var(--ff-primary);
+    /* font-family: var(--ff-primary-100); */
+    font-family: var(--ff-pramary);
     font-weight: 100;
     margin: 0;
   }
@@ -33,15 +37,19 @@
   }
 
   h1 {
-    color: var(--clr-primary--900);
-    font-size: 2.5rem;
+    color: var(--clr-neutral-100);
+    font-size: 2rem;
     font-family: var(--ff-primary-100);
     padding-block: 0 1.5rem;
     text-align: center;
+    font-weight: 600;
+  
   }
 
   h2 {
-    color: var(--clr-neutral-700);
+    color: var(--clr-neutral-200);
+    opacity: 80%;
+    margin-top: 4rem;
   }
 
   p, li {
@@ -50,7 +58,7 @@
 
   .quote-container {
     padding-block: 2rem;
-    border: 1px solid var(--clr-neutral-700);
+    border: 1px solid var(--clr-secondary-500);
   }
 
   li {
@@ -59,12 +67,13 @@
   }
 
   li::marker {
-    color: var(--clr-primary--900);
+    color: var(--clr-secondary-500);
   }
 
   .name {
-    color: var(--clr-secondary-100);
+    color: var(--clr-secondary-500);
     font-size: 1.3rem;
+    font-weight: 500;
   }
 
   #message {
@@ -72,15 +81,43 @@
     margin-bottom: 1.3em;
   }
 
-  input, button {
-    padding: .8em .5em;
-    border: 1px solid var(--clr-neutral-700);
-    background: var(--clr-seconary-600);
-    color: var(--clr-neutral-900);
+  input[type=text] {
+    padding: 1.2em .5em;
+    border: 1px solid var(--clr-secondary-500);
+    background: var(--clr-primary--200);
+    font-size: 1rem;
+    border-radius: 5px;
   }
 
   form {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+  }
+
+  .header--color {
+    color: var(--clr-secondary-500);
+  }
+
+  .input-text--color {
+    color: white;
+  }
+
+  button {
+    width: 20%;
+    background: var(--clr-primary--200);
+    color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-secondary-500);
+    padding: .4rem;
+    border-radius: 5px;
+    
+  }
+
+  ::placeholder {
+    color: white;
+    padding-left: 5px;
+  }
+
+  .quote-container {
+    
   }
