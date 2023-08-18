@@ -12,44 +12,51 @@
 </head>
 <body>
     <div class="main-container">
-    <h1>Welcome <span class="header--color">to Quotes Chemaa</span></h1>
+    <h1>WELCOME TO <span class="header--color">Quotes Chemaa</span></h1>
 
-    <form action="/quotes" method="POST">
-        <input class="input-text--color" type="text" placeholder="Name" name="name">
-        <input class="input-text--color" type="text" placeholder="Quote" name="quote">
-        <button type="submit">Submit</button>
-    </form>
-
-    <h2>Quotes By:</h2>
-    <div class="quote-container">
-        <ul class="quotes">
-            <% for(var i = 0; i < quotes.length; i++) {%>
-                <li class="quotes">
-                    <span class="name"><%= quotes[i].name %></span>:
-                    <span><%= quotes[i].quote %></span>
-                </li>
-            <% } %>
-        </ul>
-    </div>
-
-    <div>
-        <h2>Darth Vader invades!</h2>
-        <p>
-            Replace the first Yoda quote with a quote written by Darth Vader.
-        </p>
-        <button id="update-button"> Replace Yoda's quote</button>
-    </div>
-    <div class>
-        <div>
-            <h2>Remove Darth Vader!</h2>
-            <p>
-              Delete one Darth Vader quote. Does nothing if there are no more Darth
-              Vader quotes.
-            </p>
-            <button id="delete-button">Delete Darth Vader's quote</button>
+    <div class="grid-container">
+        <div class="wrap-form">
+            <form action="/quotes" method="POST">
+                <input class="input-text--color" type="text" placeholder="Name" name="name">
+                <input class="input-text--color" type="text" placeholder="Quote" name="quote">
+                <button type="submit">Submit</button>
+            </form>
         </div>
-          <div id="message"></div>
-     
+        <div class="wrap-quotes">
+            <h2 class="quote-header">Quotes By:</h2>
+            <div class="quote-container">
+                <ul class="quotes">
+                    <% for(var i = 0; i < quotes.length; i++) {%>
+                        <li class="quotes">
+                            <span class="name"><%= quotes[i].name %></span>:
+                            <span><%= quotes[i].quote %></span>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container--two">
+        <div class="wrap-replace">
+            <h2>Darth Vader invades!</h2>
+            <p>
+                Replace the first Yoda quote with a quote written by Darth Vader.
+            </p>
+            <button id="update-button" class="button"> Replace Yoda's quote</button>
+        </div>
+        <div class="wrap-remove">
+            <div>
+                <h2>Remove Darth Vader!</h2>
+                <p>
+                  Delete one Darth Vader quote. Does nothing if there are no more Darth
+                  Vader quotes.
+                </p>
+                <button id="delete-button" class="button">Delete Darth Vader's quote</button>
+            </div>
+              <div id="message"></div>
+        
+        </div>
     </div>
 </div>
       <script src="/main.js"></script>
