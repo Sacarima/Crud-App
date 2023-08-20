@@ -105,6 +105,7 @@
     border-bottom-style: solid;
     border-image: linear-gradient(to right top, #ffae57, #260B3C, #ff1361);
     border-image-slice: 1;
+    color: var(--clr-neutral-100);
     
     /* border-radius: 5px; */
   }
@@ -160,9 +161,13 @@
 
   .button {
     text-align: center;
-    width: 30%;
+    width: 35%;
     padding-block: .8em;
     margin-bottom: 2em;
+  }
+
+  #delete-button {
+    width: 45%
   }
 
   ::placeholder {
@@ -187,16 +192,29 @@
     .header--color {
       font-size: 3.2rem;
     }
-    
+
     .grid-container--two {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       margin-top: 4em;
+    }
+    
+    .grid-container--twoo {
       box-sizing: content-box;
-      border-width: 1px;
+      border-width: 5px;
       border-bottom-style: ridge;
-      border-image: linear-gradient(to right top, #ffae57, #260B3C, #ff1361);
+      border-image: linear-gradient(to left top, #ffae57, #260B3C, #ff1361);
       border-image-slice: 1;
+    }
+
+    .button {
+      width: auto;
+      padding-right: .9em;
+      padding-left: .9em;
+    }
+
+    #delete-button {
+      width: auto;
     }
 
   }
