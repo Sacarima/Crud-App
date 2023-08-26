@@ -24,10 +24,16 @@
   
   }
 
+  @font-face {
+    font-family: myFont;
+    src: url(Auliare.otf);
+  }
+
   body {
     background: var(--clr-seconary-600);
     /* font-family: var(--ff-primary-100); */
     font-family: var(--ff-pramary);
+  
     font-weight: 100;
     margin: 0;
   }
@@ -40,10 +46,11 @@
   h1 {
     color: var(--clr-neutral-100);
     font-size: 2rem;
-    font-family: var(--ff-primary-100);
+    /* font-family: var(--ff-primary-100); */
+    font-family: myFont;
     padding-block: 0 1.5rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
   
   }
 
@@ -96,7 +103,6 @@
   input[type=text] {
     padding: 1.2em .5em;
     border: none;
-    /* border-bottom: 1px solid var(--clr-secondary-500); */
     background: var(--clr-seconary-600);
     font-size: 1rem;
     outline: none;
@@ -203,7 +209,7 @@
       box-sizing: content-box;
       border-width: 5px;
       border-bottom-style: ridge;
-      border-image: linear-gradient(to left top, #ffae57, #260B3C, #ff1361);
+      border-image: linear-gradient(to right bottom, #ffae57, #260B3C, #ff1361);
       border-image-slice: 1;
     }
 
