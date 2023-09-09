@@ -36,6 +36,5 @@ deleteButton.addEventListener('click', _ => {
           } else {
         window.location.reload(true)
           }
-        // window.location.reload(true)
     })
 })

@@ -2,7 +2,6 @@ console.log("this is a test!")
 
 const express = require('express')
 const bodyParser = require('body-parser')
-//const { default: mongoose } = require('mongoose')
 const MongoClient = require('mongodb').MongoClient
 const app = express()
 const connectionString = 'mongodb+srv://joaosacarima:GjzhdFRj31UK24MV@cluster0.lczev2f.mongodb.net/Node-API?retryWrites=true&w=majority'
